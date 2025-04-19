@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Query - Sapphire Online</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .query-results {
+            margin-top: 30px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .product-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .product-row:last-child {
+            border-bottom: none;
+        }
+        .product-name {
+            font-weight: bold;
+        }
+        .product-price {
+            color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Include header and navigation from index.html -->
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" alt="Sapphire"></a>
+                </div>
+                <div class="search">
+                    <input type="text" placeholder="Search for products...">
+                    <button>Search</button>
+                </div>
+                <div class="cart">
+                    <a href="#">Cart (0)</a>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Navigation -->
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="mens.html">Men</a></li>
+                    <li><a href="womens.html">Women</a></li>
+                    <li><a href="beauty.html">Beauty</a></li>
+                    <li><a href="sale.html">Sale</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+        </nav>
+        <?php include 'header.html'; ?>
+        
+        <section class="query-section">
+            <div class="container">
+                <h2>Price Range Query</h2>
+                <p>Find products within your budget range:</p>
+                
+                <div class="form-container">
+                    <form id="priceQuery">
+                        <div class="form-group">
+                            <label for="minPrice">Minimum Price (PKR):</label>
+                            <input type="number" id="minPrice" name="minPrice" min="0" value="1000">
+                        </div>
+                        <div class="form-group">
+                            <label for="maxPrice">Maximum Price (PKR):</label>
+                            <input type="number" id="maxPrice" name="maxPrice" min="0" value="10000">
+                        </div>
+                        <button type="button" onclick="runQuery()">Search Products</button>
+                    </form>
+                    
+                    <div id="queryResults" class="query-results">
+                        <h3>Products in your price range will appear here</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Include footer from index.html -->
+                <footer>
+            <div class="container">
+                <div class="footer-columns">
+                    <div class="footer-col">
+                        <h3>Customer Service</h3>
+                        <ul>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Shipping & Returns</a></li>
+                            <li><a href="#">Size Guide</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>About Sapphire</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+                            <li><a href="store-locator.html">Store Locator</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Connect With Us</h3>
+                        <div class="social-icons">
+                            <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
+                            <a href="#"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                            <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
+                        </div>
+                        <p>Subscribe to our newsletter</p>
+                        <form>
+                            <input type="email" placeholder="Your email address">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2023 Sapphire Retail Limited. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <?php include 'footer.html'; ?>
+    </div>
+    
+    <script>
+        // Sample product data
+        const products = [
+            { name: "Embroidered Lawn Suit", price: 4999 },
+            { name: "Men's Formal Shirt", price: 3499 },
+            { name: "Women's Casual Wear", price: 5499 },
+            { name: "Kids Summer Dress", price: 2999 },
+            { name: "Designer Shawl", price: 2499 },
+            { name: "Premium Denim Jeans", price: 3999 },
+            { name: "Traditional Kurta", price: 2799 },
+            { name: "Winter Jacket", price: 6999 }
+        ];
+        
+        function runQuery() {
+            const minPrice = parseFloat(document.getElementById('minPrice').value);
+            const maxPrice = parseFloat(document.getElementById('maxPrice').value);
+            
+            if (minPrice > maxPrice) {
+                alert("Minimum price cannot be greater than maximum price");
+                return;
+            }
+            
+            const resultsDiv = document.getElementById('queryResults');
+            resultsDiv.innerHTML = '<h3>Products between PKR ' + minPrice.toLocaleString() + 
+                                 ' and PKR ' + maxPrice.toLocaleString() + '</h3>';
+            
+            // Filter products
+            const filteredProducts = products.filter(product => 
+                product.price >= minPrice && product.price <= maxPrice
+            );
+            
+            if (filteredProducts.length === 0) {
+                resultsDiv.innerHTML += '<p>No products found in this price range.</p>';
+                return;
+            }
+            
+            // Sort by price
+            filteredProducts.sort((a, b) => a.price - b.price);
+            
+            // Display results
+            filteredProducts.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product-row';
+                productDiv.innerHTML = `
+                    <span class="product-name">${product.name}</span>
+                    <span class="product-price">PKR ${product.price.toLocaleString()}</span>
+                `;
+                resultsDiv.appendChild(productDiv);
+            });
+        }
+    </script>
+</body>
+</html>
