@@ -6,27 +6,114 @@
     <title>Price Query - Sapphire Online</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .query-results {
-            margin-top: 30px;
-            border: 1px solid #ddd;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+        color: #333;
+    }
+
+    .query-section h2 {
+        font-size: 28px;
+        color: #222;
+        margin-bottom: 10px;
+    }
+
+    .query-section p {
+        font-size: 16px;
+        color: #666;
+    }
+
+    .form-container {
+        background-color: #f1f1f1;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        max-width: 600px;
+        margin-top: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 15px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #0066cc;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #004999;
+    }
+
+    .query-results {
+        margin-top: 30px;
+        border: 1px solid #ddd;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .query-results h3 {
+        margin-top: 0;
+        color: #444;
+        font-size: 20px;
+    }
+
+    .product-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .product-row:last-child {
+        border-bottom: none;
+    }
+
+    .product-name {
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    .product-price {
+        color: #0080ff;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    @media (max-width: 600px) {
         .product-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
         }
-        .product-row:last-child {
-            border-bottom: none;
-        }
-        .product-name {
-            font-weight: bold;
-        }
-        .product-price {
-            color: #0066cc;
-        }
+    }
+</style>
     </style>
 </head>
 <body>
@@ -56,7 +143,7 @@
                     <li><a href="mens.html">Men</a></li>
                     <li><a href="womens.html">Women</a></li>
                     <li><a href="beauty.html">Beauty</a></li>
-                    <li><a href="sale.html">Sale</a></li>
+                    <li><a href="sale.html">Accessories</a></li>
                     <li><a href="about.html">About Us</a></li>
                 </ul>
             </div>
@@ -96,9 +183,9 @@
                         <h3>Customer Service</h3>
                         <ul>
                             <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="#">FAQs</a></li>
+                            <li><a href="grading.html">Grading</a></li>
                             <li><a href="#">Shipping & Returns</a></li>
-                            <li><a href="#">Size Guide</a></li>
+                            <li><a href="query.html">Query</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
@@ -135,14 +222,30 @@
     <script>
         // Sample product data
         const products = [
-            { name: "Embroidered Lawn Suit", price: 4999 },
-            { name: "Men's Formal Shirt", price: 3499 },
-            { name: "Women's Casual Wear", price: 5499 },
-            { name: "Kids Summer Dress", price: 2999 },
-            { name: "Designer Shawl", price: 2499 },
-            { name: "Premium Denim Jeans", price: 3999 },
-            { name: "Traditional Kurta", price: 2799 },
-            { name: "Winter Jacket", price: 6999 }
+            { name: "Schiffli Black Embroidered Cotton Kurta", price: 7490 },
+            { name: "Rust Cotton Suit - Slim Fit", price: 7990 },
+            { name: "Embroidered Crosshatch Shirt", price: 8490 },
+            { name: "Loose Fit Jersey T-Shirt", price: 2490 },
+            { name: "MAVERICK", price: 4990 },
+            { name: "Canvas Tote Bag", price: 1490 },
+            { name: "Embellished Block Heels", price: 3990 },
+            { name: "Knot Detail Block Heels", price: 3790 },
+			 { name: "Schiffli White Embroidered Cotton Suit", price: 9990 },
+			 { name: "Schiffli Olive Embroidered Cotton Kurta", price: 6990 },
+			 { name: "Schiffli Light Blue Embroidered Cotton Kurta", price: 7490 },
+			 { name: "Schiffli Lime Embroidered Cotton Kurta", price: 6590 },
+			 { name: "Embroidered Olive Cotton Viscose Shirt", price: 6990 },
+			 { name: "Embroidered Red Cotton Viscose Shirt", price: 6990 },
+			 { name: "Light Weight Knitted Top", price: 3490 },
+			 { name: "Double Waist Band Trousers", price: 3990 },
+			    { name: "NOBEL", price: 4990 },
+			 { name: "BLOOM", price: 4990 },
+			 { name: "PASSION", price: 4990 },
+			 { name: "MONACO", price: 4990 },
+			  { name: "LEGACY", price: 5490 },
+			 { name: "Off White Top Handle Bag", price: 3990 },
+			 { name: "Tan Crossbody Bag", price: 3790 },
+			 { name: "Light Blue", price: 2990 } 
         ];
         
         function runQuery() {

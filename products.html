@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <!-- Include header and navigation from index.html -->
+        <!-- Header -->
         <header>
             <div class="container">
                 <div class="logo">
@@ -23,7 +23,7 @@
                 </div>
             </div>
         </header>
-        
+
         <!-- Navigation -->
         <nav>
             <div class="container">
@@ -33,13 +33,13 @@
                     <li><a href="mens.html">Men</a></li>
                     <li><a href="womens.html">Women</a></li>
                     <li><a href="beauty.html">Beauty</a></li>
-                    <li><a href="sale.html">Sale</a></li>
+                    <li><a href="sale.html">Accessories</a></li>
                     <li><a href="about.html">About Us</a></li>
                 </ul>
             </div>
         </nav>
-        <?php include 'header.html'; ?>
-        
+
+        <!-- Main Product Section -->
         <section class="products-section">
             <div class="container">
                 <h2>All Products</h2>
@@ -48,7 +48,8 @@
                         <option value="all">All Categories</option>
                         <option value="men">Men</option>
                         <option value="women">Women</option>
-                        <option value="kids">Kids</option>
+                        <option value="Beauty">Beauty</option>
+                        <option value="Accrssories">Accessories</option>
                     </select>
                     <select id="priceFilter">
                         <option value="all">All Prices</option>
@@ -64,24 +65,65 @@
                         <option value="name">Name: A-Z</option>
                     </select>
                 </div>
-                
+
                 <div class="product-grid">
-                    <!-- Product items will be loaded here -->
+                    <!-- Actual product items can be loaded here -->
                 </div>
             </div>
         </section>
-        
-        <!-- Include footer from index.html -->
-               <footer>
+
+        <!-- Shop by Category -->
+        <section class="categories">
+            <div class="container">
+                <h2>Shop By Category</h2>
+                <div class="category-grid">
+                    <div class="category-item">
+                        <a href="mens.html">
+                            <img src="images/men-category.jpg" alt="Men's Collection"
+                                 onmouseover="this.src='images/men-category-hover.jpg'"
+                                 onmouseout="this.src='images/men-category.jpg'">
+                            <h3>Men</h3>
+                        </a>
+                    </div>
+                    <div class="category-item">
+                        <a href="womens.html">
+                            <img src="images/women-category.jpg" alt="Women's Collection"
+                                 onmouseover="this.src='images/women-category-hover.jpg'"
+                                 onmouseout="this.src='images/women-category.jpg'">
+                            <h3>Women</h3>
+                        </a>
+                    </div>
+                    <div class="category-item">
+                        <a href="beauty.html">
+                            <img src="images/beauty-category.jpg" alt="Beauty Collection"
+                                 onmouseover="this.src='images/beauty-category-hover.jpg'"
+                                 onmouseout="this.src='images/beauty-category.jpg'">
+                            <h3>Beauty</h3>
+                        </a>
+                    </div>
+                    <div class="category-item">
+                        <a href="sale.html">
+                            <img src="images/acc-product1.jpg" alt="Accessories"
+                                 onmouseover="this.src='images/acc-product4.jpg'"
+                                 onmouseout="this.src='images/acc-product1.jpg'">
+                            <h3>Accessories</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
             <div class="container">
                 <div class="footer-columns">
                     <div class="footer-col">
                         <h3>Customer Service</h3>
                         <ul>
                             <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="#">FAQs</a></li>
+                            <li><a href="grading.html">Grading</a></li>
                             <li><a href="#">Shipping & Returns</a></li>
-                            <li><a href="#">Size Guide</a></li>
+                            <li><a href="query.html">Query</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
@@ -112,13 +154,12 @@
                 </div>
             </div>
         </footer>
-        <?php include 'footer.html'; ?>
     </div>
-    
+
     <script>
         // JavaScript to load and filter products
         document.addEventListener('DOMContentLoaded', function() {
-            // Load products and display them
+            // Load products dynamically if needed
         });
     </script>
 </body>
