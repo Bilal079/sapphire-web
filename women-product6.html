@@ -1,367 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Product Details</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #fff;
-            color: #333;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        header {
-            background-color: white;
-            padding: 15px 0;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .logo img {
-            height: 50px;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .search input[type="text"] {
-            padding: 8px;
-            width: 200px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .search button {
-            padding: 8px 12px;
-            background-color: #333;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            margin-left: 5px;
-            cursor: pointer;
-        }
-
-        .cart a {
-            color: #333;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav {
-            background-color: #333;
-        }
-
-        nav .container {
-            display: flex;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            display: block;
-            padding: 14px 0;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav ul li a:hover {
-            color: #ffcc00;
-        }
-
-        .product-container {
-            display: flex;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 40px auto;
-        }
-
-        .product-images {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .product-images img {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 6px;
-        }
-
-        .product-details {
-            flex: 1;
-        }
-
-        .price {
-            font-size: 24px;
-            color: #000;
-            margin: 10px 0;
-        }
-
-        .sku {
-            color: gray;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .fit-section,
-        .size-section,
-        .quantity-section {
-            margin: 20px 0;
-        }
-
-        .fit-button,
-        .size-buttons button,
-        .quantity-section button {
-            margin: 5px;
-            padding: 8px 14px;
-            border: 1px solid #ccc;
-            background: #f5f5f5;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        .add-to-bag {
-            background: black;
-			background-color:black;
-            color: black;
-            padding: 10px 18px;
-            margin-left: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .add-to-bag:hover {
-            background: white;
-        }
-
-        .quantity-section input {
-            width: 40px;
-            text-align: center;
-        }
-
-        .description {
-            margin-top: 30px;
-        }
-
-        footer {
-            background-color: #f5f5f5;
-            margin-top: 60px;
-            padding: 40px 0;
-            border-top: 1px solid #ccc;
-        }
-
-        .footer-columns {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-
-        .footer-col {
-            flex: 1;
-            min-width: 200px;
-        }
-
-
-
-
-
-
-        .footer-col h3 {
-            margin-bottom: 15px;
-            font-size: 18px;
-            color: #333;
-        }
-
-        .footer-col ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-col ul li a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        .footer-col ul li a:hover {
-            color: #007bff;
-        }
-
-        .social-icons a img {
-            width: 24px;
-            margin-right: 10px;
-        }
-
-        .footer-col form {
-            margin-top: 10px;
-        }
-
-        .footer-col input[type="email"] {
-            padding: 8px;
-            width: 70%;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .footer-col button {
-            padding: 8px 12px;
-            margin-top: 8px;
-            background-color: #333;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .copyright {
-            margin-top: 30px;
-            text-align: center;
-            font-size: 14px;
-            color: #777;
-        }
-    </style>
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <div class="logo">
-            <a href="index.html"><img src="images/logo.png" alt="Sapphire"></a>
-        </div>
-        <div class="search">
-            <input type="text" placeholder="Search for products...">
-            <button>Search</button>
-        </div>
-        <div class="cart">
-            <a href="#">Cart (0)</a>
-        </div>
-    </div>
-</header>
-
-<nav>
-    <div class="container">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="mens.html">Men</a></li>
-            <li><a href="womens.html">Women</a></li>
-            <li><a href="beauty.html">Beauty</a></li>
-            <li><a href="sale.html">Accessories</a></li>
-            <li><a href="about.html">About Us</a></li>
-        </ul>
-    </div>
-</nav>
-
-<div class="product-container">
-    <div class="product-images">
-        <img src="images/women-product6.jpg" alt="Kurta Front View">
-        <img src="images/women-product6-hover.jpg" alt="Kurta Side View">
-    </div>
-    <div class="product-details">
-        <h1>Loose Fit Jersey T-Shirt</h1>
-        <p class="price">Rs.2,490.00</p>
-        <p class="sku">SKU: WTOPS25V3005_999</p>
-
-        <div class="size-section">
-            <strong>SIZE:</strong> (SELECT YOUR SIZE)
-            <div class="size-buttons">
-                <button>S</button>
-                <button>M</button>
-                <button>L</button>
-                <button>XL</button>
-            </div>
-        </div>
-
-        <div class="quantity-section">
-            <button>-</button>
-            <input type="text" value="1">
-            <button>+</button>
-            <button class="add-to-bag">ADD TO BAG</button>
-        </div>
-
-        <div class="description">
+<table width="100%" border="0" cellpadding="10">
+    <tr>
+        <td colspan="2" align="center">
+            <h1>Loose Fit Jersey T-Shirt</h1>
+        </td>
+    </tr>
+    <tr>
+        <td width="50%" align="center">
+            <img src="images/women-product6.jpg" alt="Kurta Front View" width="300">
+            <br><br>
+            <img src="images/women-product6-hover.jpg" alt="Kurta Side View" width="300">
+        </td>
+        <td valign="top">
+            <h2>Rs.2,490.00</h2>
+            <p><small>SKU: WTOPS25V3005_999</small></p>
+            
+            <h3>SIZE: (SELECT YOUR SIZE)</h3>
+            <table cellpadding="5">
+                <tr>
+                    <td><button>S</button></td>
+                    <td><button>M</button></td>
+                    <td><button>L</button></td>
+                    <td><button>XL</button></td>
+                </tr>
+            </table>
+            
+            <h3>QUANTITY:</h3>
+            <table cellpadding="5">
+                <tr>
+                    <td><button>-</button></td>
+                    <td><input type="text" value="1" size="2"></td>
+                    <td><button>+</button></td>
+                    <td><button>ADD TO BAG</button></td>
+                </tr>
+            </table>
+            
             <h3>PRODUCT DETAILS</h3>
-            <br>
             <p>Loose fit T-shirt in soft jersey fabric. Round rib neck. Drop shoulders and short sleeves.</p>
-            <br>
-            <p><strong>Details:</strong> </p>
-            <p><strong>Colour:</strong> Red<br><strong>Fabric:</strong> 100% Cotton</p>
-            <br>
-            <p><strong>Size &amp; Fit<br>Model Height:</strong> 5 Feet 6 Inches<br><strong>Model Wears Size:</strong> S</p>
-        </div>
-    </div>
-</div>
-
-<footer>
-    <div class="container">
-        <div class="footer-columns">
-            <div class="footer-col">
-                <h3>Customer Service</h3>
-                <ul>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Shipping & Returns</a></li>
-                    <li><a href="#">Size Guide</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>About Sapphire</h3>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="terms.html">Terms &amp; Conditions</a></li>
-                    <li><a href="store-locator.html">Store Locator</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Connect With Us</h3>
-                <div class="social-icons">
-                    <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
-                    <a href="#"><img src="images/instagram-icon.png" alt="Instagram"></a>
-                    <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
-                </div>
-                <p>Subscribe to our newsletter</p>
-                <form>
-                    <input type="email" placeholder="Your email address">
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-        <div class="copyright">
+            
+            <p><strong>Details:</strong></p>
+            <p><strong>Colour:</strong> Red<br>
+            <strong>Fabric:</strong> 100% Cotton</p>
+            
+            <p><strong>Size &amp; Fit<br>
+            Model Height:</strong> 5 Feet 6 Inches<br>
+            <strong>Model Wears Size:</strong> S</p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <hr>
             <p>&copy; 2023 Sapphire Retail Limited. All Rights Reserved.</p>
-        </div>
-    </div>
-</footer>
+        </td>
+    </tr>
+</table>
 
 </body>
 </html>

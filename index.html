@@ -4,170 +4,199 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sapphire Online - Pakistan's Leading Fashion Brand</title>
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .product-image-container {
+            position: relative;
+            width: 100%;
+        }
+        .product-image {
+            width: 100%;
+        }
+        .product-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            width: 100%;
+            transition: opacity 0.3s ease;
+        }
+        .product-image-container:hover .product-hover {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
-    <div class="wrapper">
-        <!-- Top Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <ul>
-                    <li><a href="store-locator.html">Store Locator</a></li>
-                    <li><a href="#">Track Order</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="#">Sign In</a></li>
-                    <li><a href="#">Register</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- Header -->
-        <header>
-            <div class="container">
-                <div class="logo">
-                    <a href="index.html"><img src="images/logo.png" alt="Sapphire"></a>
-                </div>
-                <div class="search">
-                    <input type="text" placeholder="Search for products...">
-                    <button>Search</button>
-                </div>
-                <div class="cart">
-                    <a href="#">Cart (0)</a>
-                </div>
-            </div>
-        </header>
-        
-        <!-- Navigation -->
-        <nav>
-            <div class="container">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="mens.html">Men</a></li>
-                    <li><a href="womens.html">Women</a></li>
-                    <li><a href="beauty.html">Beauty</a></li>
-                    <li><a href="sale.html">Accessories</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                </ul>
-            </div>
-        </nav>
-        
-        <!-- Banner -->
-        <section class="banner">
-            <img src="images/banner.jpg" alt="Sapphire Collection">
-        </section>
-        
-        <!-- Categories -->
-        <section class="categories">
-            <div class="container">
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="10">
+        <tr>
+            <td width="33%">
+                <a href="index.html"><img src="images/logo.png" alt="Sapphire" width="150"></a>
+            </td>
+            <td width="34%">
+                <input type="text" placeholder="Search for products..." size="30">
+                <button>Search</button>
+            </td>
+            <td width="33%" align="right">
+                <a href="#">Cart (0)</a>
+            </td>
+        </tr>
+    </table>
+    
+    <table width="100%" border="0" cellspacing="0" cellpadding="10" bgcolor="#333">
+        <tr>
+            <td><a href="index.html" style="color:white; text-decoration:none;">Home</a></td>
+            <td><a href="products.html" style="color:white; text-decoration:none;">Products</a></td>
+            <td><a href="mens.html" style="color:white; text-decoration:none;">Men</a></td>
+            <td><a href="womens.html" style="color:white; text-decoration:none;">Women</a></td>
+            <td><a href="beauty.html" style="color:white; text-decoration:none;">Beauty</a></td>
+            <td><a href="sale.html" style="color:white; text-decoration:none;">Accessories</a></td>
+            <td><a href="about.html" style="color:white; text-decoration:none;">About Us</a></td>
+        </tr>
+    </table>
+    
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+                <img src="images/banner.jpg" alt="Sapphire Collection" width="100%">
+            </td>
+        </tr>
+    </table>
+    
+    <table width="100%" border="0" cellspacing="0" cellpadding="20">
+        <tr>
+            <td align="center">
                 <h2>Shop By Category</h2>
-                <div class="category-grid">
-                    <div class="category-item">
-                        <a href="mens.html">
-                            <img src="images/men-category.jpg" alt="Men's Collection" 
-                                 onmouseover="this.src='images/men-category-hover.jpg'" 
-                                 onmouseout="this.src='images/men-category.jpg'">
-                            <h3>Men</h3>
-                        </a>
-                    </div>
-                    <div class="category-item">
-                        <a href="womens.html">
-                            <img src="images/women-category.jpg" alt="Women's Collection" 
-                                 onmouseover="this.src='images/women-category-hover.jpg'" 
-                                 onmouseout="this.src='images/women-category.jpg'">
-                            <h3>Women</h3>
-                        </a>
-                    </div>
-                    <div class="category-item">
-                        <a href="beauty.html">
-                            <img src="images/beauty-category.jpg" alt="Beauty Collection" 
-                                 onmouseover="this.src='images/beauty-category-hover.jpg'" 
-                                 onmouseout="this.src='images/beauty-category.jpg'">
-                            <h3>Beauty</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Featured Products -->
-        <section class="featured-products">
-            <div class="container">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table width="100%" border="0" cellspacing="20" cellpadding="0">
+                    <tr>
+                        <td width="33%" align="center">
+                            <a href="mens.html">
+                                <img src="images/men-category.jpg" alt="Men's Collection" width="100%">
+                                <h3>Men</h3>
+                            </a>
+                        </td>
+                        <td width="33%" align="center">
+                            <a href="womens.html">
+                                <img src="images/women-category.jpg" alt="Women's Collection" width="100%">
+                                <h3>Women</h3>
+                            </a>
+                        </td>
+                        <td width="33%" align="center">
+                            <a href="beauty.html">
+                                <img src="images/beauty-category.jpg" alt="Beauty Collection" width="100%">
+                                <h3>Beauty</h3>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    
+    <table width="100%" border="0" cellspacing="0" cellpadding="20">
+        <tr>
+            <td align="center">
                 <h2>Featured Products</h2>
-                <div class="product-grid">
-                    <div class="product-item">
-                        <a href="women-product1.html">
-                            <img src="images/product1.jpg" alt="Product 1">
-                            <h3>Embroidered Crosshatch Shirt</h3>
-                            <p class="price">PKR 8,490.00</p>
-                        </a>
-                    </div>
-                    <div class="product-item">
-                        <a href="men-product1.html">
-                            <img src="images/product2.jpg" alt="Product 2">
-                            <h3>Schiffli Embroidered Cotton Suit</h3>
-                            <p class="price">PKR 9,990.00</p>
-                        </a>
-                    </div>
-                    <div class="product-item">
-                        <a href="#">
-                            <img src="images/product3.jpg" alt="Product 3">
-                            <h3>Nobel</h3>
-                            <p class="price">PKR 4,990</p>
-                        </a>
-                    </div>
-                    <div class="product-item">
-                        <a href="women-product4.html">
-                            <img src="images/product4.jpg" alt="Product 4">
-                            <h3>Light Weight Knitted Top</h3>
-                            <p class="price">PKR 3,490</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="footer-columns">
-                    <div class="footer-col">
-                        <h3>Customer Service</h3>
-                        <ul>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="grading.html">Grading</a></li>
-                            <li><a href="#">Shipping & Returns</a></li>
-                            <li><a href="query.html">Query</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h3>About Sapphire</h3>
-                        <ul>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="terms.html">Terms &amp; Conditions</a></li>
-                            <li><a href="store-locator.html">Store Locator</a></li>
-                            <li><a href="privacy.html">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h3>Connect With Us</h3>
-                        <div class="social-icons">
-                            <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
-                            <a href="#"><img src="images/instagram-icon.png" alt="Instagram"></a>
-                            <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
-                        </div>
-                        <p>Subscribe to our newsletter</p>
-                        <form>
-                            <input type="email" placeholder="Your email address">
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="copyright">
-                    <p>&copy; 2023 Sapphire Retail Limited. All Rights Reserved.</p>
-                </div>
-            </div>
-        </footer>
-    </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table width="100%" border="0" cellspacing="20" cellpadding="0">
+                    <tr>
+                        <td width="25%" align="center" valign="top">
+                            <a href="women-product1.html">
+                                <div class="product-image-container">
+                                    <img src="images/product1.jpg" alt="Product 1" class="product-image">
+                                    <img src="images/women-product1-hover.jpg" alt="Product 1 Hover" class="product-hover">
+                                </div>
+                                <h3>Embroidered Crosshatch Shirt</h3>
+                                <p>PKR 8,490.00</p>
+                            </a>
+                        </td>
+                        <td width="25%" align="center" valign="top">
+                            <a href="men-product1.html">
+                                <div class="product-image-container">
+                                    <img src="images/product2.jpg" alt="Product 2" class="product-image">
+                                    <img src="images/men-product2-hover.jpg" alt="Product 2 Hover" class="product-hover">
+                                </div>
+                                <h3>Schiffli Embroidered Cotton Suit</h3>
+                                <p>PKR 9,990.00</p>
+                            </a>
+                        </td>
+                        <td width="25%" align="center" valign="top">
+                            <a href="#">
+                                <div class="product-image-container">
+                                    <img src="images/product3.jpg" alt="Product 3" class="product-image">
+                                    <img src="images/acc-product3-hover.jpg" alt="Product 3 Hover" class="product-hover">
+                                </div>
+                                <h3>Nobel</h3>
+                                <p>PKR 4,990</p>
+                            </a>
+                        </td>
+                        <td width="25%" align="center" valign="top">
+                            <a href="women-product4.html">
+                                <div class="product-image-container">
+                                    <img src="images/product4.jpg" alt="Product 4" class="product-image">
+                                    <img src="images/women-product4-hover.jpg" alt="Product 4 Hover" class="product-hover">
+                                </div>
+                                <h3>Light Weight Knitted Top</h3>
+                                <p>PKR 3,490</p>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    
+    <table width="100%" border="0" cellspacing="0" cellpadding="20" bgcolor="#f2f2f2">
+        <tr>
+            <td>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="33%" valign="top">
+                            <h3>Customer Service</h3>
+                            <ul>
+                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="grading.html">Grading</a></li>
+                                <li><a href="#">Shipping & Returns</a></li>
+                                <li><a href="query.html">Query</a></li>
+                            </ul>
+                        </td>
+                        <td width="33%" valign="top">
+                            <h3>About Sapphire</h3>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="terms.html">Terms &amp; Conditions</a></li>
+                                <li><a href="store-locator.html">Store Locator</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                            </ul>
+                        </td>
+                        <td width="33%" valign="top">
+                            <h3>Connect With Us</h3>
+                            <p>
+                                <a href="#"><img src="images/facebook-icon.png" alt="Facebook" width="30"></a>
+                                <a href="#"><img src="images/instagram-icon.png" alt="Instagram" width="30"></a>
+                                <a href="#"><img src="images/twitter-icon.png" alt="Twitter" width="30"></a>
+                            </p>
+                            <p>Subscribe to our newsletter</p>
+                            <form>
+                                <input type="email" placeholder="Your email address">
+                                <button type="submit">Subscribe</button>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <p>&copy; 2023 Sapphire Retail Limited. All Rights Reserved.</p>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>

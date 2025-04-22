@@ -2,381 +2,148 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Men's Collection - Sapphire Online</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        .category-header {
-            background-image: url('../images/mens-banner.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 30px;
-            color: white;
-            text-align: center;
-        }
-        .category-header h1 {
-            font-size: 48px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            background-color: rgba(0,0,0,0.5);
-            padding: 20px 40px;
-            border-radius: 8px;
-        }
-        .filter-options {
-            background-color: #f5f5f5;
-            padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        .filter-options select, .filter-options input {
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            background-color: white;
-        }
-        .filter-options button {
-            padding: 10px 20px;
-            background-color: #0066cc;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .filter-options button:hover {
-            background-color: #004499;
-        }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-bottom: 50px;
-        }
-        .product-item {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        .product-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-        .product-image {
-            position: relative;
-            overflow: hidden;
-        }
-        .product-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.3s;
-        }
-        .product-item:hover .product-image img {
-            transform: scale(1.05);
-        }
-        .product-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #ff3333;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        .product-info {
-            padding: 15px;
-        }
-        .product-info h3 {
-            margin-bottom: 10px;
-            color: #333;
-        }
-        .product-price {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-        .current-price {
-            color: #0066cc;
-            font-weight: bold;
-            font-size: 18px;
-        }
-        .original-price {
-            color: #999;
-            text-decoration: line-through;
-            font-size: 14px;
-        }
-        .discount {
-            color: #ff3333;
-            font-weight: bold;
-            font-size: 14px;
-        }
-        .product-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        .add-to-cart, .wishlist {
-            flex: 1;
-            padding: 8px 0;
-            text-align: center;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-        .add-to-cart {
-            background-color: #0066cc;
-            color: white;
-            border: none;
-        }
-        .add-to-cart:hover {
-            background-color: #004499;
-        }
-        .wishlist {
-            background-color: #f5f5f5;
-            color: #333;
-            border: 1px solid #ddd;
-        }
-        .wishlist:hover {
-            background-color: #e5e5e5;
-        }
-		
-		.product-image img.hover-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.product-item:hover .product-image img.hover-image {
-    opacity: 1;
-}
-
-.product-image {
-    position: relative;
-}
-
-    </style>
 </head>
 <body>
-    <div class="wrapper">
-        <!-- Include header and navigation from index.html -->
-         <header>
-            <div class="container">
-                <div class="logo">
-                    <a href="index.html"><img src="images/logo.png" alt="Sapphire"></a>
-                </div>
-                <div class="search">
-                    <input type="text" placeholder="Search for products...">
-                    <button>Search</button>
-                </div>
-                <div class="cart">
-                    <a href="#">Cart (0)</a>
-                </div>
-            </div>
-        </header>
-        
-        <!-- Navigation -->
-        <nav>
-            <div class="container">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="mens.html">Men</a></li>
-                    <li><a href="womens.html">Women</a></li>
-                    <li><a href="beauty.html">Beauty</a></li>
-                    <li><a href="sale.html">Accessories</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                </ul>
-            </div>
-        </nav>
-        <?php include 'header.html'; ?>
-        
-        <div class="category-header">
-            <h1>Men's Collection</h1>
-        </div>
-        
-        <section class="mens-section">
-            <div class="container">     
-                <div class="product-grid">
-                    <!-- Product 1 -->
-                    <div class="product-item">
-                        <div class="product-image">
-                        <a href="men-product1.html">
-                       	 <img src="images/men-product1.jpg" alt="Men's Stitched">
-                         <img src="images/men-product1-hover.jpg" class="hover-image" alt="Hover Image">
-                         <div class="product-badge">New</div>
-                         </a>
-	                    </div>
 
-                        <div class="product-info">
-                            <h3>Schiffli Embroidered Cotton Suit</h3>
-                            <div class="product-price">
-                                <span class="current-price">PKR 9,990.00</span>
-                            </div>
-                            <div class="product-actions">
-                                <button class="add-to-cart">Add to Cart</button>
-                                <button class="wishlist">Wishlist</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Product 2 -->
-                    <div class="product-item">
-                        <div class="product-image">
-                        <a href="men-product2.html">
-                            <img src="images/men-product2.jpg" alt="Men's Stitched">
-                                <img src="images/men-product2-hover.jpg" class="hover-image" alt="Hover Image">
-                                </a>
-                        </div>
-                        <div class="product-info">
-                            <h3>Schiffli Embroidered Cotton Kurta</h3>
-                            <div class="product-price">
-                                <span class="current-price">PKR 7,490</span>
-                            </div>
-                            <div class="product-actions">
-                                <button class="add-to-cart">Add to Cart</button>
-                                <button class="wishlist">Wishlist</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Product 3 -->
-                    <div class="product-item">
-                        <div class="product-image">
-                        <a href="men-product3.html">
-                            <img src="images/men-product3.jpg" alt="Men's Stitchedt">
-                                <img src="images/men-product3-hover.jpg" class="hover-image" alt="Hover Image">
-                                </a>
-                            <div class="product-badge">Bestseller</div>
-                        </div>
-                        <div class="product-info">
-                            <h3>Cotton Suit - Slim Fit</h3>
-                            <div class="product-price">
-                                <span class="current-price">PKR 7,990</span>
-                            </div>
-                            <div class="product-actions">
-                                <button class="add-to-cart">Add to Cart</button>
-                                <button class="wishlist">Wishlist</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Product 4 -->
-                    <div class="product-item">
-                        <div class="product-image">
-                        <a href="men-product4.html">
-                            <img src="images/men-product4.jpg" alt="Men's Stitched">
-                                <img src="images/men-product4-hover.jpg" class="hover-image" alt="Hover Image">
-                                </a>
-                        </div>
-                        <div class="product-info">
-                            <h3>Schiffli Embroidered Cotton Kurta</h3>
-                            <div class="product-price">
-                                <span class="current-price">PKR 6,990</span>
-                            </div>
-                            <div class="product-actions">
-                                <button class="add-to-cart">Add to Cart</button>
-                                <button class="wishlist">Wishlist</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Product 5 -->
-                    <div class="product-item">
-                        <div class="product-image">
-                        <a href="men-product5.html">
-                            <img src="images/men-product5.jpg" alt="Men's Stitched">
-                                <img src="images/men-product5-hover.jpg" class="hover-image" alt="Hover Image">
-                                </a>
-                            <div class="product-badge">Limited</div>
-                        </div>
-                        <div class="product-info">
-                            <h3>Schiffli Embroidered Cotton Kurta</h3>
-                            <div class="product-price">
-                                <span class="current-price">PKR 7,490</span>
-                            </div>
-                            <div class="product-actions">
-                                <button class="add-to-cart">Add to Cart</button>
-                                <button class="wishlist">Wishlist</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Product 6 -->
-                    <div class="product-item">
-                        <div class="product-image">
-                        <a href="men-product6.html">
-                            <img src="images/men-product6.jpg" alt="Men's Stitched">
-                                <img src="images/men-product6-hover.jpg" class="hover-image" alt="Hover Image">
-                                </a>
-                        </div>
-                        <div class="product-info">
-                            <h3>Schiffli Embroidered Cotton Kurta</h3>
-                            <div class="product-price">
-                                <span class="current-price">PKR 6,590</span>
-                            </div>
-                            <div class="product-actions">
-                                <button class="add-to-cart">Add to Cart</button>
-                                <button class="wishlist">Wishlist</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<table width="100%" border="0" cellpadding="10">
+    <tr>
+        <td width="33%">
+            <a href="index.html"><img src="images/logo.png" alt="Sapphire" height="50"></a>
+        </td>
+        <td width="34%" align="center">
+            <input type="text" placeholder="Search for products..." size="30">
+            <button>Search</button>
+        </td>
+        <td width="33%" align="right">
+            <a href="#">Cart (0)</a>
+        </td>
+    </tr>
+</table>
+
+<table width="100%" bgcolor="#333" cellpadding="10">
+    <tr>
+        <td align="center"><a href="index.html" style="color:white;text-decoration:none">Home</a></td>
+        <td align="center"><a href="products.html" style="color:white;text-decoration:none">Products</a></td>
+        <td align="center"><a href="mens.html" style="color:white;text-decoration:none">Men</a></td>
+        <td align="center"><a href="womens.html" style="color:white;text-decoration:none">Women</a></td>
+        <td align="center"><a href="beauty.html" style="color:white;text-decoration:none">Beauty</a></td>
+        <td align="center"><a href="sale.html" style="color:white;text-decoration:none">Accessories</a></td>
+        <td align="center"><a href="about.html" style="color:white;text-decoration:none">About Us</a></td>
+    </tr>
+</table>
+
+<!-- Banner -->
+<table width="100%" bgcolor="#0066cc" height="200" cellpadding="0" cellspacing="0">
+    <tr>
+        <td align="center" valign="middle">
+            <h1 style="color:white;font-size:36px">Men's Collection</h1>
+        </td>
+    </tr>
+</table>
+
+<table width="90%" align="center" cellpadding="20" cellspacing="20">
+    <tr>
+        <td width="33%" valign="top">
+            <a href="men-product1.html">
+                <img src="images/men-product1.jpg" alt="Men's Stitched" width="100%">
+            </a>
+            <h3>Schiffli Embroidered Cotton Suit</h3>
+            <p><b>PKR 9,990.00</b></p>
+            <button>Add to Cart</button>
+            <button>Wishlist</button>
+        </td>
         
-        <!-- Include footer from index.html -->
-                       <footer>
-            <div class="container">
-                <div class="footer-columns">
-                    <div class="footer-col">
-                        <h3>Customer Service</h3>
-                        <ul>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="grading.html">Grading</a></li>
-                            <li><a href="#">Shipping & Returns</a></li>
-                            <li><a href="query.html">Query</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h3>About Sapphire</h3>
-                        <ul>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="terms.html">Terms &amp; Conditions</a></li>
-                            <li><a href="store-locator.html">Store Locator</a></li>
-                            <li><a href="privacy.html">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h3>Connect With Us</h3>
-                        <div class="social-icons">
-                            <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
-                            <a href="#"><img src="images/instagram-icon.png" alt="Instagram"></a>
-                            <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
-                        </div>
-                        <p>Subscribe to our newsletter</p>
-                        <form>
-                            <input type="email" placeholder="Your email address">
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="copyright">
-                    <p>&copy; 2023 Sapphire Retail Limited. All Rights Reserved.</p>
-                </div>
-            </div>
-        </footer>
-        <?php include 'footer.html'; ?>
-    </div>
+        <td width="33%" valign="top">
+            <a href="men-product2.html">
+                <img src="images/men-product2.jpg" alt="Men's Stitched" width="100%">
+            </a>
+            <h3>Schiffli Embroidered Cotton Kurta</h3>
+            <p><b>PKR 7,490</b></p>
+            <button>Add to Cart</button>
+            <button>Wishlist</button>
+        </td>
+        
+        <td width="33%" valign="top">
+            <a href="men-product3.html">
+                <img src="images/men-product3.jpg" alt="Men's Stitched" width="100%">
+            </a>
+            <h3>Cotton Suit - Slim Fit</h3>
+            <p><b>PKR 7,990</b></p>
+            <button>Add to Cart</button>
+            <button>Wishlist</button>
+        </td>
+    </tr>
+    
+    <tr>
+        <td width="33%" valign="top">
+            <a href="men-product4.html">
+                <img src="images/men-product4.jpg" alt="Men's Stitched" width="100%">
+            </a>
+            <h3>Schiffli Embroidered Cotton Kurta</h3>
+            <p><b>PKR 6,990</b></p>
+            <button>Add to Cart</button>
+            <button>Wishlist</button>
+        </td>
+        
+        <td width="33%" valign="top">
+            <a href="men-product5.html">
+                <img src="images/men-product5.jpg" alt="Men's Stitched" width="100%">
+            </a>
+            <h3>Schiffli Embroidered Cotton Kurta</h3>
+            <p><b>PKR 7,490</b></p>
+            <button>Add to Cart</button>
+            <button>Wishlist</button>
+        </td>
+        
+        <td width="33%" valign="top">
+            <a href="men-product6.html">
+                <img src="images/men-product6.jpg" alt="Men's Stitched" width="100%">
+            </a>
+            <h3>Schiffli Embroidered Cotton Kurta</h3>
+            <p><b>PKR 6,590</b></p>
+            <button>Add to Cart</button>
+            <button>Wishlist</button>
+        </td>
+    </tr>
+</table>
+
+<table width="100%" bgcolor="#f5f5f5" cellpadding="20">
+    <tr>
+        <td valign="top">
+            <h3>Customer Service</h3>
+            <ul>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="grading.html">Grading</a></li>
+                <li><a href="#">Shipping & Returns</a></li>
+                <li><a href="query.html">Query</a></li>
+            </ul>
+        </td>
+        <td valign="top">
+            <h3>About Sapphire</h3>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="store-locator.html">Store Locator</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </td>
+        <td valign="top">
+            <h3>Connect With Us</h3>
+            <a href="#"><img src="images/facebook-icon.png" alt="Facebook" width="24"></a>
+            <a href="#"><img src="images/instagram-icon.png" alt="Instagram" width="24"></a>
+            <a href="#"><img src="images/twitter-icon.png" alt="Twitter" width="24"></a>
+            <p>Subscribe to our newsletter</p>
+            <input type="email" placeholder="Your email address" size="25"><br>
+            <button>Subscribe</button>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" align="center">
+            <p>&copy; 2023 Sapphire Retail Limited. All Rights Reserved.</p>
+        </td>
+    </tr>
+</table>
+
 </body>
 </html>
